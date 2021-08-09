@@ -1,0 +1,16 @@
+PODS:
+  - DLDataCollectorSDK (0.0.2)
+
+DEPENDENCIES:
+  - DLDataCollectorSDK
+
+SPEC REPOS:
+  trunk:
+    - DLDataCollectorSDK
+
+SPEC CHECKSUMS:
+  DLDataCollectorSDK: 86cf70fd5945e8001901af3e0591f27b6f8a7dc0
+
+PODFILE CHECKSUM: 043cffd507de512fe8cf1f3192c260eb77b8eeb7
+
+COCOAPODS: 1.10.1
