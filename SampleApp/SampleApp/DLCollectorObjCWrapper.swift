@@ -12,16 +12,20 @@ import DLDataCollectorSDK
 /// This is an example of how you could wrap the SDK to use it from Objective-C using
 /// swift interoperability
 @objc class DlCollectorWrapper: NSObject {
-    @objc func setUp() {
+    
+    // [DLCollectorWrapper setUp];
+    @objc static func setUp() {
         let settings = DLCollectorSettings(apiKey: "Example API Key")
         DLCollector.shared.setUp(settings)
     }
     
-    @objc func startSession() {
+    // [DLCollectorWrapper startSession];
+    @objc static func startSession() {
         try? DLCollector.shared.startSession()
     }
     
-    @objc func getSession() -> String? {
+    // [DLCollectorWrapper getSession];
+    @objc static func getSession() -> String? {
         return DLCollector.shared.getSessionId()
     }
 }
