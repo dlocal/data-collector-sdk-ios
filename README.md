@@ -1,5 +1,9 @@
 # DLDataCollector SDK
 
+### Requirements
+* Xcode 12+
+* min target: iOS 10
+
 ## Install
 There are different ways to install the SDK:
 
@@ -20,7 +24,7 @@ pod install
 
 * Use **pod update** as needed to keep the sdk up to date
 
-### Manual (not recommended)
+### Manual (Not recommended)
 * Go to [Downloads](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/downloads/) and download the latest version
 
 * Unzip & follow the [apple docs](https://help.apple.com/xcode/mac/11.4/#/dev51a648b07) to add the xcframework to your project
