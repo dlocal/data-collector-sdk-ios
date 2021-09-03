@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Session Id&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76c-tt-INz">
+                                <rect key="frame" x="158" y="442.5" width="98.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyC-9k-Uba">
+                                <rect key="frame" x="161" y="737" width="92" height="30"/>
+                                <state key="normal" title="Start Session"/>
+                                <connections>
+                                    <action selector="startSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EVa-eZ-XFH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsZ-7J-gpE">
+                                <rect key="frame" x="156.5" y="782" width="101" height="30"/>
+                                <state key="normal" title="Get Session ID"/>
+                                <connections>
+                                    <action selector="getSessionId:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g1G-WO-w6b"/>
+                                    <action selector="startSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6BG-lG-cpc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="76c-tt-INz" secondAttribute="trailing" constant="10" id="0Y1-L4-cfX"/>
+                            <constraint firstItem="ZsZ-7J-gpE" firstAttribute="centerX" secondItem="fyC-9k-Uba" secondAttribute="centerX" id="E8w-p5-FJ4"/>
+                            <constraint firstItem="76c-tt-INz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="FZq-Ts-nml"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZsZ-7J-gpE" secondAttribute="bottom" constant="50" id="gKL-Hw-oSQ"/>
+                            <constraint firstItem="ZsZ-7J-gpE" firstAttribute="top" secondItem="fyC-9k-Uba" secondAttribute="bottom" constant="15" id="oY0-Ic-kOW"/>
+                            <constraint firstItem="fyC-9k-Uba" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vre-T1-cwS"/>
+                            <constraint firstItem="76c-tt-INz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="wCS-vz-eVA"/>
+                            <constraint firstItem="76c-tt-INz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zYO-ie-ScG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sessionIdLabel" destination="76c-tt-INz" id="2E7-0b-T1o"/>
+                        <outlet property="startSessionBtn" destination="fyC-9k-Uba" id="dM3-Rd-Nc5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="50"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
