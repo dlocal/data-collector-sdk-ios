@@ -103,7 +103,9 @@ You can also associate additional data related to each session to improve the fr
 score. The following example shows how to pass the user's ID inside `DLAdditionalData` object.
 
 ```swift
-// fill in
+let data = DLAdditionalData(userId: "user-id")
+            
+try? DLCollector.shared.startSession(additionalData: data)
 ```
 
 NOTE: This method runs in a background thread and doesn't block the main thread.
