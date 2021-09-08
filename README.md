@@ -9,7 +9,8 @@ The DataCollector SDK collects and sends device information to improve fraud det
     - [ CocoaPods ](#markdown-header-cocoapods) 
     - [ Manual (XCFramework) ](#markdown-header-manual)
 4. [ How to use ](#markdown-header-how-to-use)
-5. [ Switching environments ](#markdown-header-switching-environments)
+5. [ Testing the integration ](#markdown-header-testing-the-integration)
+    - [ Switching environments ](#markdown-header-switching-environments)
 6. [ Objective-C ](#markdown-header-objective-c)
 7. [ Sample App ](#markdown-header-sample-app)
 8. [ Report Issues ](#markdown-header-report-issues)
@@ -52,7 +53,7 @@ pod --version
 ```
 - Add pod to Podfile ([Example](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/Podfile))
 ```ruby
-pod 'DLDataCollectorSDK', ~> '0.0.0'
+pod 'DLDataCollectorSDK', '~> 0.0.0'
 ```
 * Run install
 ```shell
@@ -87,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 Replacing `apiKey` with your key.
 
-See the SampleApp [AppDelegate](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/AppDelegate.swif) for a detailed example
+See the SampleApp [AppDelegate](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/SampleApp/AppDelegate.swift) for a detailed example
 
 ### 2) Start session
 Start session will gather device information, and generate a sessionId.
@@ -100,17 +101,17 @@ try? DLCollector.shared.startSession()
 ```
 
 You can also associate additional data related to each session to improve the fraud prevention
-score. The following example shows how to pass the user's ID inside `DLAdditionalData` object.
+score. The following example shows how to pass a user reference or id inside the `DLAdditionalData` object.
 
 ```swift
-let data = DLAdditionalData(userId: "user-id")
+let data = DLAdditionalData(userReference: "user-id")
             
 try? DLCollector.shared.startSession(additionalData: data)
 ```
 
 NOTE: This method runs in a background thread and doesn't block the main thread.
 
-See the SampleApp [ViewController](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/ViewController.swif) for a detailed example
+See the SampleApp [ViewController](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/SampleApp/ViewController.swift) for a detailed example
 
 ### 3) Link the session to the transaction
 
@@ -120,9 +121,20 @@ When the user starts the checkout transaction, gather the session id like so:
 let sessionId = DLCollector.shared.getSessionId()
 ```
 
-Send that id in the transaction as additional info. The method can return nil if a session is not available or an error occurred.
+Submit this value in the payment request within the `additional_risk_data.device.event_uuid` parameter. The method can return null if a session is not available or an error occurred.
 
-## Switching environments
+## Testing the integration
+Once integrated, you can use the `.verbose` log level to see if the SDK is working. This can be done by changing the setup settings like so:
+```Swift
+let settings = DLSettings(apiKey: "SBX API KEY", env: .sandbox, logLevel: .verbose)
+```
+And looking at the console, when startSession is run, we should see the folloowing logs if everything is working:
+```log
+DLDataCollector 💾: Success getting session ID
+DLDataCollector 💾: SessionId: 6f13dc3e-c689-4627-95f3-060c7ac525c0
+```
+
+### Switching environments
 
 We strongly **recommend that you use the `SANDBOX` environment when testing**, and only use `PRODUCTION` in production ready builds. 
 
@@ -139,7 +151,7 @@ To do so, you can use the setup and `DLSettings` to configure a different enviro
 Replacing the `apiKey` with yours for each environment.
 
 ## Objective-C
-If you need to use the SDK from Objcetive-C, checkout [the sample app's ObjC wrapper](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/DLCollectorObjCWrapper.swift). Then use swift interoperability as explained [here](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c)
+If you need to use the SDK from Objcetive-C, checkout [the sample app's ObjC wrapper](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/SampleApp/DLCollectorObjCWrapper.swift). Then use swift interoperability as explained [here](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c)
 
 ## Sample App
 In this repository there's a [sample app](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp) to showcase how to use the SDK, please refer to the code for more detailed examples.

@@ -3,5 +3,5 @@ platform :ios, '10.0'
 target 'SampleApp' do
   use_frameworks!
 
-  pod 'DLDataCollectorSDK', ~> '0.0.4'
+  pod 'DLDataCollectorSDK', '~> 0.0.0'
 end
