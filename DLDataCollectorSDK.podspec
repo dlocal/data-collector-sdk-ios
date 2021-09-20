@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = 'DLDataCollectorSDK'
-    spec.version      = '0.0.6'
+    spec.version      = '0.0.7'
     spec.authors      = { 'dLocal' => 'mobile-dev@dlocal.com' }
     spec.homepage     = "https://bitbucket.org/dlocal-public/data-collector-sdk-ios/"
     spec.summary      = 'dLocal - Data Collector SDK'
