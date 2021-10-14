@@ -1,5 +1,5 @@
 PODS:
-  - DLDataCollectorSDK (0.0.6)
+  - DLDataCollectorSDK (0.0.7)
 
 DEPENDENCIES:
   - DLDataCollectorSDK (~> 0.0.0)
@@ -9,8 +9,8 @@ SPEC REPOS:
     - DLDataCollectorSDK
 
 SPEC CHECKSUMS:
-  DLDataCollectorSDK: 3bc08b0330699a444223101865d14444891f653d
+  DLDataCollectorSDK: 532a015b3e8c7402badb4b03d9c0d314439667b6
 
 PODFILE CHECKSUM: 5ad1c6ea31fdaf2b78f7a0948b7d7a36aa01bb2e
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

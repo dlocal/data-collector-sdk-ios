@@ -88,7 +88,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 Replacing `apiKey` with your key.
 
-See the SampleApp [AppDelegate](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/SampleApp/AppDelegate.swift) for a detailed example
+See the SampleApp [AppDelegate](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/SampleApp/AppDelegate.swift) for a detailed example.
+
+If you're app is using SwiftUI and doesn't have a custom AppDelegate, put the equivalent code inside the init of the App struct like so:
+
+```swift 
+@main
+struct ExampleApp: App {
+    init() {
+        let settings = DLSettings(apiKey: "API KEY")
+        DLCollector.shared.setUp(settings)
+    }
+}
+```
 
 ### 2) Start session
 Start session will gather device information, and generate a sessionId.
