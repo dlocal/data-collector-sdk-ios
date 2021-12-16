@@ -13,8 +13,9 @@ The DataCollector SDK collects and sends device information to improve fraud det
     - [ Switching environments ](#markdown-header-switching-environments)
 6. [ Objective-C ](#markdown-header-objective-c)
 7. [ Sample App ](#markdown-header-sample-app)
-8. [ Report Issues ](#markdown-header-report-issues)
-9. [ License ](#markdown-header-license)
+8. [ Cross-platform frameworks ](#markdown-header-cross-platform-frameworks)
+9. [ Report Issues ](#markdown-header-report-issues)
+10. [ License ](#markdown-header-license)
 
 ## Requirements
 - Xcode 12+
@@ -168,7 +169,12 @@ If you need to use the SDK from Objcetive-C, checkout [the sample app's ObjC wra
 ## Sample App
 In this repository there's a [sample app](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp) to showcase how to use the SDK, please refer to the code for more detailed examples.
 
+## Cross-platform frameworks
+This SDK can be included in any native app, we also made available the following plugins for cross-platform frameworks:
+
+- [ionic capacitor plugin](https://bitbucket.org/dlocal-public/dlocal-data-collector-capacitor-plugin/src/main/)
+
 ## Report Issues
 If you have a problem or find an issue with the SDK please contact us at [mobile-dev@dlocal.com](mailto:mobile-dev@dlocal.com)
 
-## License
+## [License](LICENSE)
