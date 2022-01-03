@@ -166,6 +166,15 @@ Replacing the `apiKey` with yours for each environment.
 ## Objective-C
 If you need to use the SDK from Objcetive-C, checkout [the sample app's ObjC wrapper](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/SampleApp/DLCollectorObjCWrapper.swift). Then use swift interoperability as explained [here](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c)
 
+## App Store
+If your app is distributed through the App Store, you musst comply with the App Store rules. When using this SDK you must ensure the following:
+* Add a disclaimer in the app that says that device data is collected and sent to a third party (dlocal).
+* If your app uses location, please add to the info.plist NSLocatioUsageeDescription keys a disclaimer that the location data will also be used in fraud prevention.
+
+The SDK will only use location data if the app is using it already, so it is not necessary to add a location disclaimer if location is not used.
+
+For more information please refer to [apple's documentation](https://developer.apple.com/documentation/uikit/protecting_the_user_s_privacy) for more information. 
+
 ## Sample App
 In this repository there's a [sample app](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp) to showcase how to use the SDK, please refer to the code for more detailed examples.
 
