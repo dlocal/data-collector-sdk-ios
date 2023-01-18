@@ -54,7 +54,7 @@ pod --version
 ```
 - Add pod to Podfile ([Example](https://github.com/dlocal/data-collector-sdk-ios/blob/master/SampleApp/Podfile#L6))
 ```ruby
-pod 'DLDataCollectorSDK', '~> 0.1.4'
+pod 'DLDataCollectorSDK', '~> 0.1.5'
 ```
 * Run install
 ```shell
