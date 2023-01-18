@@ -1,10 +1,10 @@
 Pod::Spec.new do |spec|
     spec.name         = 'DLDataCollectorSDK'
-    spec.version      = '0.1.1'
+    spec.version      = '0.1.4'
     spec.authors      = { 'dLocal' => 'mobile-dev@dlocal.com' }
-    spec.homepage     = "https://bitbucket.org/dlocal-public/data-collector-sdk-ios/"
+    spec.homepage     = "https://github.com/dlocal/data-collector-sdk-ios"
     spec.summary      = 'dLocal - Data Collector SDK'
-    spec.source       = { :http => "https://bitbucket.org/dlocal-public/data-collector-sdk-ios/downloads/DLDataCollectorSDK-#{spec.version.to_s}.zip" }
+    spec.source       = { :http => "https://github.com/dlocal/data-collector-sdk-ios/releases/download/v#{spec.version.to_s}/DLDataCollectorSDK-#{spec.version.to_s}.zip" }
     spec.license      = { :type => 'Custom', :file => 'LICENSE' }
     spec.platform     = :ios
     spec.ios.deployment_target = '10.0'

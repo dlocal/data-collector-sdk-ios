@@ -2,20 +2,20 @@
 The DataCollector SDK collects and sends device information to improve fraud detection accuracy, and identify devices.
 
 ## Table of Contents:
-1. [ Requirements ](#markdown-header-requirements)
-2. [ App permissions ](#markdown-header-app-permissions)
-2. [ System Frameworks ](#markdown-header-system-frameworks)
-3. [ Installation ](#markdown-header-installation)
-    - [ CocoaPods ](#markdown-header-cocoapods) 
-    - [ Manual (XCFramework) ](#markdown-header-manual)
-4. [ How to use ](#markdown-header-how-to-use)
-5. [ Testing the integration ](#markdown-header-testing-the-integration)
-    - [ Switching environments ](#markdown-header-switching-environments)
-6. [ Objective-C ](#markdown-header-objective-c)
-7. [ Sample App ](#markdown-header-sample-app)
-8. [ Cross-platform frameworks ](#markdown-header-cross-platform-frameworks)
-9. [ Report Issues ](#markdown-header-report-issues)
-10. [ License ](#markdown-header-license)
+1. [Requirements](#requirements)
+2. [App permissions](#app-permissions)
+2. [System Frameworks](#system-frameworks)
+3. [Installation](#installation)
+    - [CocoaPods](#cocoapods) 
+    - [Manual (XCFramework)](#manual)
+4. [How to use](#how-to-use)
+5. [Testing the integration](#testing-the-integration)
+    - [Switching environments](#switching-environments)
+6. [Objective-C](#objective-c)
+7. [Sample App](#sample-app)
+8. [Cross-platform frameworks](#cross-platform-frameworks)
+9. [Report Issues](#report-issues)
+10. [License](#license)
 
 ## Requirements
 - Xcode 12+
@@ -52,9 +52,9 @@ There are different ways to install the SDK:
 ```shell
 pod --version
 ```
-- Add pod to Podfile ([Example](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/Podfile))
+- Add pod to Podfile ([Example](https://github.com/dlocal/data-collector-sdk-ios/blob/master/SampleApp/Podfile#L6))
 ```ruby
-pod 'DLDataCollectorSDK', '~> 0.0.0'
+pod 'DLDataCollectorSDK', '~> 0.1.4'
 ```
 * Run install
 ```shell
@@ -63,7 +63,7 @@ pod install
 * Use **pod update** as needed to keep the sdk up to date
 
 ### Manual
-* Go to [Downloads](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/downloads/) and download the latest version
+* Go to [Releases](https://github.com/dlocal/data-collector-sdk-ios/releases) and download the latest version
 
 * Unzip & follow the [apple docs](https://help.apple.com/xcode/mac/11.4/#/dev51a648b07) to add the xcframework to your project
 
@@ -89,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 Replacing `apiKey` with your key.
 
-See the SampleApp [AppDelegate](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/SampleApp/AppDelegate.swift) for a detailed example.
+See the SampleApp [AppDelegate](https://github.com/dlocal/data-collector-sdk-ios/blob/master/SampleApp/SampleApp/AppDelegate.swift#L15-L16) for a detailed example.
 
 If you're app is using SwiftUI and doesn't have a custom AppDelegate, put the equivalent code inside the init of the App struct like so:
 
@@ -124,7 +124,7 @@ try? DLCollector.shared.startSession(additionalData: data)
 
 NOTE: This method runs in a background thread and doesn't block the main thread.
 
-See the SampleApp [ViewController](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/SampleApp/ViewController.swift) for a detailed example
+See the SampleApp [ViewController](https://github.com/dlocal/data-collector-sdk-ios/blob/master/SampleApp/SampleApp/ViewController.swift#L21) for a detailed example
 
 ### 3) Link the session to the transaction
 
@@ -164,7 +164,7 @@ To do so, you can use the setup and `DLSettings` to configure a different enviro
 Replacing the `apiKey` with yours for each environment.
 
 ## Objective-C
-If you need to use the SDK from Objcetive-C, checkout [the sample app's ObjC wrapper](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp/SampleApp/DLCollectorObjCWrapper.swift). Then use swift interoperability as explained [here](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c)
+If you need to use the SDK from Objcetive-C, checkout [the sample app's ObjC wrapper](https://github.com/dlocal/data-collector-sdk-ios/blob/master/SampleApp/SampleApp/DLCollectorObjCWrapper.swift). Then use swift interoperability as explained [here](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c)
 
 ## App Store
 If your app is distributed through the App Store, you musst comply with the App Store rules. When using this SDK you must ensure the following:
@@ -176,15 +176,39 @@ The SDK will only use location data if the app is using it already, so it is not
 For more information please refer to [apple's documentation](https://developer.apple.com/documentation/uikit/protecting_the_user_s_privacy) for more information. 
 
 ## Sample App
-In this repository there's a [sample app](https://bitbucket.org/dlocal-public/data-collector-sdk-ios/src/master/SampleApp) to showcase how to use the SDK, please refer to the code for more detailed examples.
+In this repository there's a [sample app](https://github.com/dlocal/data-collector-sdk-ios/tree/master/SampleApp) to showcase how to use the SDK, please refer to the code for more detailed examples.
 
 ## Cross-platform frameworks
 This SDK can be included in any native app, we also made available the following plugins for cross-platform frameworks:
 
-- [ionic capacitor plugin](https://bitbucket.org/dlocal-public/dlocal-data-collector-capacitor-plugin/src/main/)
-- [ionic cordova plugin](https://bitbucket.org/dlocal-public/dlocal-data-collector-cordova-plugin/src/master/)
+- [ionic capacitor plugin](https://github.com/dlocal/dlocal-data-collector-capacitor-plugin)
+- [ionic cordova plugin](https://github.com/dlocal/dlocal-data-collector-cordova-plugin)
 
 ## Report Issues
 If you have a problem or find an issue with the SDK please contact us at [mobile-dev@dlocal.com](mailto:mobile-dev@dlocal.com)
 
-## [License](LICENSE)
+## License
+
+```text
+    MIT License
+
+    Copyright (c) 2022 DLOCAL
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+```
